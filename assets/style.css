@@ -3,7 +3,7 @@
 :root {
   --ink: #0E1B2C; --ink-soft: #2A3A52; --ink-light: #5A6A82;
   --paper: #F5F1EA; --paper-warm: #EAE3D6; --paper-deep: #DCD2BD;
-  --accent: #C8501E; --accent-soft: #E8B898; --accent-deep: #9A3D17;
+  --accent: #9A3D17; --accent-soft: #E8B898; --accent-deep: #6D2B0F;
   --gold: #B8924A;
   --line: rgba(14, 27, 44, 0.12); --line-strong: rgba(14, 27, 44, 0.25);
   --shadow-sm: 0 2px 8px rgba(14, 27, 44, 0.06);
@@ -24,13 +24,13 @@ a:hover { color: var(--accent); }
 .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(245,241,234,0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); padding: 16px 0; }
 .nav-inner { max-width: 1320px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .logo { display: inline-flex; align-items: center; gap: 8px; line-height: 0; }
-.logo img, .logo svg { display: block; height: 44px; width: auto; }
-.logo-text-fallback { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--ink); line-height: 1; letter-spacing: 0.01em; }
-.logo-text-fallback-white { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--paper); line-height: 1; letter-spacing: 0.01em; }
+.logo img, .logo svg { display: block; height: 60px; width: auto; }
+.logo-text-fallback { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 500; color: var(--ink); line-height: 1; letter-spacing: 0.01em; }
+.logo-text-fallback-white { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 500; color: var(--paper); line-height: 1; letter-spacing: 0.01em; }
 .logo-text { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--ink); line-height: 1; }
 .logo-dot { color: var(--accent); }
 @media (max-width: 640px) {
-  .logo img, .logo svg { height: 36px; }
+  .logo img, .logo svg { height: 44px; }
   .logo-text-fallback, .logo-text-fallback-white { font-size: 18px; }
 }
 .nav-links { display: flex; gap: 28px; list-style: none; font-size: 14px; font-weight: 500; align-items: center; }
@@ -247,11 +247,11 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 /* FOOTER */
 .site-footer { background: var(--ink); color: var(--paper); padding: 64px 32px 32px; }
 .footer-inner { max-width: 1320px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(245,241,234,0.15); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(245,241,234,0.15); align-items: start; }
 .footer-grid h4 { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 18px; opacity: 0.6; color: var(--paper); font-weight: 500; }
 .footer-grid a { display: block; color: var(--paper); padding: 5px 0; font-size: 14px; opacity: 0.85; }
 .footer-grid a:hover { color: var(--accent-soft); opacity: 1; }
-.footer-brand .logo img { height: 48px; }
+.footer-brand .logo img { height: 64px; }
 .footer-brand p { margin-top: 14px; opacity: 0.7; font-size: 14px; max-width: 320px; }
 .footer-bottom { padding-top: 28px; display: flex; justify-content: space-between; font-size: 13px; opacity: 0.6; flex-wrap: wrap; gap: 14px; }
 @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
