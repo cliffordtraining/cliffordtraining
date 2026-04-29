@@ -229,7 +229,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 .content-body blockquote .quote-author { display: block; font-family: 'Inter', sans-serif; font-style: normal; font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
 .content-body blockquote .quote-author strong { display: inline; color: var(--ink); font-weight: 600; }
 
-.page-cta-band { background: var(--ink); color: var(--paper); padding: 72px 32px; text-align: center; margin-top: 40px; }
+.page-cta-band { background: var(--ink); color: var(--paper); padding: 72px 32px; text-align: center; margin-top: 40px; border-bottom: 1px solid rgba(245,241,234,0.15); }
 .page-cta-band .inner { max-width: 640px; margin: 0 auto; }
 .page-cta-band h3 { font-size: clamp(26px, 3vw, 36px); color: var(--paper); margin-bottom: 12px; }
 .page-cta-band p { font-size: 16px; opacity: 0.85; margin-bottom: 28px; }
