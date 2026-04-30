@@ -55,22 +55,36 @@
 </style>
 <script type="application/ld+json">
 {
-"@context": "https://schema.org",
-"@type": "BreadcrumbList",
-"itemListElement": [
-{
-"@type": "ListItem",
-"position": 1,
-"name": "Home",
-"item": "https://www.cliffordtraining.nl/"
-},
-{
-"@type": "ListItem",
-"position": 2,
-"name": "Aanbevelingen",
-"item": "https://www.cliffordtraining.nl/aanbevelingen.html"
-}
-]
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.cliffordtraining.nl/#service",
+      "name": "Clifford Training & Coaching",
+      "url": "https://www.cliffordtraining.nl/",
+      "description": "Senior executive coaching, leiderschapstraining en loopbaancoaching voor directeuren, DGA's, MT-leden en senior managers.",
+      "provider": {
+        "@type": "Person",
+        "@id": "https://www.cliffordtraining.nl/#dave-clifford",
+        "name": "Dave Clifford"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "9.6",
+        "bestRating": "10",
+        "worstRating": "1",
+        "ratingCount": "75",
+        "reviewCount": "75"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.cliffordtraining.nl/"},
+        {"@type": "ListItem", "position": 2, "name": "Aanbevelingen", "item": "https://www.cliffordtraining.nl/aanbevelingen.html"}
+      ]
+    }
+  ]
 }
 </script>
 </head>
@@ -776,7 +790,6 @@
         <a href="mailto:info@cliffordtraining.nl">info@cliffordtraining.nl</a>
         <a href="https://www.linkedin.com/in/cliffordtraining" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://www.instagram.com/cliffordtraining" target="_blank" rel="noopener">Instagram</a>
-        <div style="font-size: 14px; opacity: 0.6; padding-top: 12px; margin-top: 8px; border-top: 1px solid rgba(245,241,234,0.12);">KvK 09145392</div>
       </div>
     </div>
     <div class="footer-bottom">
