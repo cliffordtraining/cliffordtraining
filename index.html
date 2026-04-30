@@ -213,7 +213,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 @media (max-width: 968px) { .slider-dots { display: flex; } }
 
 /* TESTIMONIALS */
-.testimonials-section { background: var(--paper); padding: 100px 0; border-top: 1px solid var(--line); }
+.testimonials-section { background: #FFFFFF; padding: 100px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .testimonials-header { max-width: 1320px; margin: 0 auto 56px; padding: 0 32px; display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 32px; }
 .testimonials-header h2 { font-size: clamp(32px, 4.5vw, 52px); line-height: 1.05; max-width: 600px; }
 .testimonials-meta { text-align: right; font-size: 14px; color: var(--ink-soft); }
@@ -242,7 +242,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
   }
   .testimonials-meta { text-align: left; }
 }
-.testimonial { background: white; padding: 28px; border-radius: 6px; margin-bottom: 24px; break-inside: avoid; border: 1px solid var(--line); transition: all 0.3s; }
+.testimonial { background: var(--paper-warm); padding: 28px; border-radius: 6px; margin-bottom: 24px; break-inside: avoid; border: 1px solid var(--line); transition: all 0.3s; }
 .testimonial:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .testimonial-mark { font-family: 'Fraunces', serif; font-size: 56px; line-height: 0.5; color: var(--accent); margin-bottom: 24px; display: block; }
 .testimonial p { font-size: 15px; line-height: 1.65; color: var(--ink); margin-bottom: 20px; }
@@ -678,24 +678,26 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
   </div>
 </section>
 
-<section class="section">
-  <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px;">
-    <div style="max-width: 600px;">
-      <div class="eyebrow">Inzichten &amp; Blog</div>
-      <h2 class="section-title">Over leiderschap, verandering en de kunst van het coachen.</h2>
-    </div>
-    <a href="blog/index.html" class="btn btn-secondary">Alle artikelen &rarr;</a>
-  </div>
-  <div class="blog-grid-4" style="grid-template-columns: 1fr; max-width: 880px; margin: 0 auto;">
-    <a href="blog/pijn-van-discipline-versus-pijn-van-spijt.html" class="blog-card">
-      <div class="blog-image"><picture><source srcset="assets/img/60-bergpad-italie-vallei-liggend.webp" type="image/webp"><img src="assets/img/60-bergpad-italie-vallei-liggend.jpg" alt="Bergpad in de Dolomieten, metafoor voor discipline en groei" loading="lazy" width="1600" height="900"></picture></div>
-      <div class="blog-content">
-        <div class="blog-meta">22 oktober 2025 &middot; Leiderschap</div>
-        <h3>De pijn van discipline versus de pijn van spijt</h3>
-        <p>Elke leider staat voor dezelfde keuze: de kortstondige pijn van discipline, of de blijvende pijn van spijt.</p>
-        <span class="blog-card-link">Lees het artikel &rarr;</span>
+<section style="background: var(--paper-warm);">
+  <div class="section">
+    <div style="display: flex; justify-content: space-between; align-items: end; margin-bottom: 56px; flex-wrap: wrap; gap: 24px;">
+      <div style="max-width: 600px;">
+        <div class="eyebrow">Inzichten &amp; Blog</div>
+        <h2 class="section-title">Over leiderschap, verandering en de kunst van het coachen.</h2>
       </div>
-    </a>
+      <a href="blog/index.html" class="btn btn-secondary">Alle artikelen &rarr;</a>
+    </div>
+    <div class="blog-grid-4" style="grid-template-columns: 1fr; max-width: 880px; margin: 0 auto;">
+      <a href="blog/pijn-van-discipline-versus-pijn-van-spijt.html" class="blog-card">
+        <div class="blog-image"><picture><source srcset="assets/img/60-bergpad-italie-vallei-liggend.webp" type="image/webp"><img src="assets/img/60-bergpad-italie-vallei-liggend.jpg" alt="Bergpad in de Dolomieten, metafoor voor discipline en groei" loading="lazy" width="1600" height="900"></picture></div>
+        <div class="blog-content">
+          <div class="blog-meta">22 oktober 2025 &middot; Leiderschap</div>
+          <h3>De pijn van discipline versus de pijn van spijt</h3>
+          <p>Elke leider staat voor dezelfde keuze: de kortstondige pijn van discipline, of de blijvende pijn van spijt.</p>
+          <span class="blog-card-link">Lees het artikel &rarr;</span>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
