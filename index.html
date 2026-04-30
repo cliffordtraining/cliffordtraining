@@ -75,12 +75,18 @@ a:hover { color: var(--accent); }
 .nav-cta:hover { background: var(--accent); }
 .mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; margin: -8px; }
 .mobile-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); margin: 5px 0; transition: all 0.3s; }
+.nav-mobile-cta-item { display: none; }
 @media (max-width: 1024px) {
   .nav-links { display: none; }
   .mobile-toggle { display: block; }
   .nav-cta { display: none; }
-  .site-nav.mobile-open .nav-links { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--paper); padding: 24px; gap: 8px; border-bottom: 1px solid var(--line); align-items: stretch; max-height: calc(100vh - 80px); overflow-y: auto; }
-  .site-nav.mobile-open .nav-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; padding: 4px 0 4px 16px; margin: 0; }
+  .site-nav.mobile-open .nav-links { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--paper); padding: 20px 24px 28px; gap: 4px; border-bottom: 1px solid var(--line); align-items: stretch; max-height: calc(100vh - 80px); overflow-y: auto; font-size: 18px; }
+  .site-nav.mobile-open .nav-links > li > a { font-size: 18px; padding: 14px 0; font-weight: 500; }
+  .site-nav.mobile-open .nav-dropdown-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: none; padding: 4px 0 8px 16px; margin: 0; background: transparent; min-width: 0; }
+  .site-nav.mobile-open .nav-dropdown-menu a { font-size: 17px; padding: 12px 14px; }
+  .site-nav.mobile-open .nav-mobile-cta-item { display: block; margin-top: 16px; }
+  .site-nav.mobile-open .nav-cta-mobile { display: inline-flex; align-items: center; gap: 8px; background: var(--ink); color: var(--paper) !important; padding: 14px 24px; border-radius: 999px; font-size: 16px; font-weight: 500; }
+  .site-nav.mobile-open .nav-cta-mobile:hover { background: var(--accent); }
 }
 
 /* LAYOUT */
@@ -141,10 +147,16 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 .breadcrumbs a:hover { color: var(--accent); }
 
 /* TRUST BAR */
-.trust-bar { padding: 36px 32px; background: var(--paper-warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.trust-bar { padding: 44px 32px; background: var(--paper-warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .trust-inner { max-width: 1320px; margin: 0 auto; }
-.trust-label { text-align: center; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 22px; font-weight: 500; }
-.trust-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 32px 48px; font-family: 'Fraunces', serif; font-size: 20px; color: var(--ink-soft); opacity: 0.75; }
+.trust-label { text-align: center; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 28px; font-weight: 500; }
+.trust-logos { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px 36px; font-family: 'Inter', sans-serif; }
+.trust-logos > span { display: inline-flex; align-items: center; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); white-space: nowrap; line-height: 1.2; }
+@media (max-width: 768px) {
+  .trust-bar { padding: 36px 20px; }
+  .trust-logos { gap: 14px 24px; }
+  .trust-logos > span { font-size: 12px; }
+}
 
 /* CARDS */
 .cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -422,6 +434,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
       <li><a href="aanbevelingen.html">Aanbevelingen</a></li>
       <li><a href="blog/index.html">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
+      <li class="nav-mobile-cta-item"><a href="contact.html" class="nav-cta-mobile">Plan een gesprek &rarr;</a></li>
     </ul>
     <a href="contact.html" class="nav-cta">Plan een gesprek</a>
     <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false" onclick="var n=document.getElementById('siteNav');n.classList.toggle('mobile-open');this.setAttribute('aria-expanded',n.classList.contains('mobile-open'));">
@@ -459,7 +472,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
   <div class="trust-inner">
     <div class="trust-label">Vertrouwd door leiders bij onder meer</div>
     <div class="trust-logos">
-      <span>Ahold Delhaize</span><span>ING</span><span>ABN AMRO</span><span>Jumbo</span><span>Akzo Nobel</span><span>DSM</span><span>Arcadis</span><span>Teijin Aramid</span><span>Arval BNP Paribas</span><span>Vesteda</span><span>Corbion Total</span><span>Oostendorp Autogroep</span>
+      <span>Ahold Delhaize</span><span>ING</span><span>Jumbo</span><span>Akzo Nobel</span><span>DSM</span><span>Arcadis</span><span>Teijin Aramid</span><span>Arval BNP Paribas</span><span>Vesteda</span><span>Corbion Total</span><span>Oostendorp Autogroep</span>
     </div>
   </div>
 </section>
