@@ -40,8 +40,8 @@
   --shadow-lg: 0 24px 48px -12px rgba(14, 27, 44, 0.18);
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 img { max-width: 100%; height: auto; display: block; }
 h1, h2, h3, h4, .serif { font-family: 'Fraunces', Georgia, serif; font-weight: 400; letter-spacing: -0.02em; line-height: 1.1; }
 em { font-style: italic; color: var(--accent); }
@@ -213,7 +213,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 @media (max-width: 968px) { .slider-dots { display: flex; } }
 
 /* TESTIMONIALS */
-.testimonials-section { background: var(--paper-warm); padding: 100px 0; }
+.testimonials-section { background: var(--paper); padding: 100px 0; border-top: 1px solid var(--line); }
 .testimonials-header { max-width: 1320px; margin: 0 auto 56px; padding: 0 32px; display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 32px; }
 .testimonials-header h2 { font-size: clamp(32px, 4.5vw, 52px); line-height: 1.05; max-width: 600px; }
 .testimonials-meta { text-align: right; font-size: 14px; color: var(--ink-soft); }
@@ -644,6 +644,24 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
       </div>
     </article>
 
+    <article class="testimonial">
+      <span class="testimonial-mark">&ldquo;</span>
+      <p>De training van Dave heb ik als zeer waardevol en inspirerend ervaren. Je krijgt tools aangereikt die je meteen in de praktijk kan toepassen. Het heeft meer inzicht gegeven in mijn teamleden en hoe je een nog betere leider voor hun kan zijn.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-photo">WK</div>
+        <div class="testimonial-info"><div class="testimonial-name">Werner Kambel</div><div class="testimonial-role">Inkoop</div><div class="testimonial-company">Arval BNP Paribas Group</div></div>
+      </div>
+    </article>
+
+    <article class="testimonial">
+      <span class="testimonial-mark">&ldquo;</span>
+      <p>Dave is een coach die vanuit verbinding en goed luisteren echt tot de kern weet te komen. Hij heeft mij op persoonlijk vlak geholpen om aangeleerde overtuigingen en gedrag te buigen. De woorden &ldquo;doe maar net alsof het kan&rdquo; zullen mij bijblijven, waarmee hij mij hielp over de drempel te stappen om de juiste technieken toe te laten. Dave heeft mij altijd het gevoel gegeven dat hij voor mij klaarstond en mij oprecht verder wilde helpen.</p>
+      <div class="testimonial-author">
+        <div class="testimonial-photo">JM</div>
+        <div class="testimonial-info"><div class="testimonial-name">Jeroen van Mourik</div><div class="testimonial-role">Supermarktmanager</div><div class="testimonial-company">Albert Heijn</div></div>
+      </div>
+    </article>
+
   </div>
   <div class="slider-dots" data-dots-for="testimonials" style="margin-top: 24px;">
     <button type="button" class="active" aria-label="Aanbeveling 1"></button>
@@ -652,6 +670,8 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
     <button type="button" aria-label="Aanbeveling 4"></button>
     <button type="button" aria-label="Aanbeveling 5"></button>
     <button type="button" aria-label="Aanbeveling 6"></button>
+    <button type="button" aria-label="Aanbeveling 7"></button>
+    <button type="button" aria-label="Aanbeveling 8"></button>
   </div>
   <div class="testimonials-cta">
     <a href="aanbevelingen.html" class="btn btn-secondary">Lees alle 75 aanbevelingen &rarr;</a>
