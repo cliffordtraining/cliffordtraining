@@ -117,6 +117,20 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 .hero-image-caption { position: absolute; bottom: 24px; left: 24px; right: 24px; color: var(--paper); font-family: 'Fraunces', serif; font-style: italic; font-size: 15px; line-height: 1.4; padding: 16px; background: rgba(14,27,44,0.7); backdrop-filter: blur(8px); border-radius: 4px; }
 @media (max-width: 968px) { .hero-split { grid-template-columns: 1fr; gap: 40px; } .hero { padding: 40px 20px 64px; } .hero-image { aspect-ratio: 3/4; max-height: 500px; } }
 
+/* DARK HERO */
+.hero-dark { background: var(--ink); color: var(--paper); max-width: none; padding: 80px 32px 100px; }
+.hero-dark .hero-split { max-width: 1320px; margin: 0 auto; }
+.hero-dark h1 { color: var(--paper); }
+.hero-dark p.lead { color: rgba(245,241,234,0.85); }
+.hero-dark .eyebrow, .eyebrow-dark { color: var(--accent-soft); }
+.hero-dark .eyebrow::before, .eyebrow-dark::before { background: var(--accent-soft); }
+.hero-stats { margin-top: 40px; padding-top: 36px; border-top: 1px solid rgba(245,241,234,0.15); }
+.hero-stats .stat-num { font-family: 'Fraunces', serif; font-size: 48px; color: var(--accent-soft); font-weight: 300; line-height: 1; }
+.hero-stats .stat-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px; opacity: 0.7; color: var(--paper); }
+.btn-primary-light { background: var(--paper); color: var(--ink) !important; padding: 14px 28px; border-radius: 999px; font-weight: 500; transition: all 0.25s; display: inline-block; }
+.btn-primary-light:hover { background: var(--accent-soft); color: var(--ink) !important; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+@media (max-width: 968px) { .hero-dark { padding: 56px 20px 72px; } .hero-stats { grid-template-columns: 1fr 1fr; } }
+
 /* PAGE HEADER */
 .page-header { background: var(--paper-warm); padding: 80px 32px 64px; border-bottom: 1px solid var(--line); }
 .page-header-inner { max-width: 1320px; margin: 0 auto; }
@@ -173,7 +187,30 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 .mentor-name { font-family: 'Fraunces', serif; font-size: 22px; margin-bottom: 4px; }
 .mentor-role { font-size: 13px; color: var(--accent); letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; margin-bottom: 14px; }
 .mentor-content p { font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
-@media (max-width: 968px) { .mentors-grid { grid-template-columns: 1fr; } }
+@media (max-width: 968px) {
+  .mentors-grid {
+    grid-template-columns: none;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding: 4px 20px 20px;
+    margin: 0 -20px;
+    scrollbar-width: none;
+  }
+  .mentors-grid::-webkit-scrollbar { display: none; }
+  .mentors-grid .mentor-card {
+    flex: 0 0 82%;
+    max-width: 340px;
+    scroll-snap-align: center;
+  }
+}
+.slider-dots { display: none; justify-content: center; gap: 8px; margin-top: 20px; }
+.slider-dots button { width: 8px; height: 8px; border-radius: 50%; border: none; background: var(--line-strong); cursor: pointer; padding: 0; transition: all 0.2s; }
+.slider-dots button.active { background: var(--accent); transform: scale(1.3); }
+@media (max-width: 968px) { .slider-dots { display: flex; } }
 
 /* TESTIMONIALS */
 .testimonials-section { background: var(--paper-warm); padding: 100px 0; }
@@ -182,8 +219,29 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 .testimonials-meta { text-align: right; font-size: 14px; color: var(--ink-soft); }
 .testimonials-meta strong { font-family: 'Fraunces', serif; font-size: 32px; color: var(--accent); display: block; line-height: 1; }
 .testimonials-grid { max-width: 1320px; margin: 0 auto; padding: 0 32px; columns: 3; column-gap: 24px; }
-@media (max-width: 968px) { .testimonials-grid { columns: 2; } .testimonials-meta { text-align: left; } }
-@media (max-width: 640px) { .testimonials-grid { columns: 1; } }
+@media (max-width: 968px) {
+  .testimonials-grid {
+    columns: auto;
+    column-gap: 0;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding: 4px 20px 20px;
+    margin: 0 -20px;
+    scrollbar-width: none;
+  }
+  .testimonials-grid::-webkit-scrollbar { display: none; }
+  .testimonials-grid .testimonial {
+    flex: 0 0 85%;
+    max-width: 360px;
+    margin-bottom: 0;
+    scroll-snap-align: center;
+  }
+  .testimonials-meta { text-align: left; }
+}
 .testimonial { background: white; padding: 28px; border-radius: 6px; margin-bottom: 24px; break-inside: avoid; border: 1px solid var(--line); transition: all 0.3s; }
 .testimonial:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .testimonial-mark { font-family: 'Fraunces', serif; font-size: 56px; line-height: 0.5; color: var(--accent); margin-bottom: 24px; display: block; }
@@ -378,10 +436,8 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
       <div class="eyebrow eyebrow-dark">Executive Coaching &middot; Leiderschapstraining &middot; Arnhem</div>
       <h1>Leiders die <em>echt</em> bewegen, beginnen bij innerlijke rust.</h1>
       <p class="lead">Al ruim 20 jaar begeleidt Dave Clifford directeuren, DGA&#39;s, MT-leden en senior managers bij het maken van heldere keuzes, het versterken van hun leiderschap en het realiseren van duurzame resultaten. Wat klanten meestal benoemen is: meer rust, meer focus en opnieuw plezier in hun werk. Hij coacht en traint in het Nederlands en Engels en werkt vanuit Arnhem voor leiders in onder meer Nijmegen, Apeldoorn, Utrecht en Den Bosch.</p>
-      <p class="hero-credentials">NLP Master Practitioner &middot; DiSC-consultant sinds 2004 &middot; Health Certification Coach (Robert Dilts, 2017) &middot; Wholeness Work I-III (Connirae Andreas, 2024) &middot; Werkt sinds 2007 met dr. Lucas Derks aan <a href="sociaal-panorama-coaching.html">Sociaal Panorama</a> op directieniveau.</p>
       <div class="button-row" style="margin-top: 32px;">
         <a href="contact.html" class="btn btn-primary-light">Plan een gesprek &rarr;</a>
-        <a href="over-dave.html" class="btn btn-light-outline">Lees Dave&#39;s verhaal</a>
       </div>
       <div class="stats-row hero-stats">
         <div><div class="stat-num">22</div><div class="stat-label">Jaar ervaring</div></div>
@@ -495,6 +551,11 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
       </div>
     </article>
   </div>
+  <div class="slider-dots" data-dots-for="mentors">
+    <button type="button" class="active" aria-label="Robert Dilts"></button>
+    <button type="button" aria-label="Connirae Andreas"></button>
+    <button type="button" aria-label="dr. Lucas Derks"></button>
+  </div>
   <div style="text-align: center; margin-top: 40px;">
     <a href="over-dave.html" class="btn btn-secondary">Meer over de methoden &rarr;</a>
   </div>
@@ -584,6 +645,14 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
     </article>
 
   </div>
+  <div class="slider-dots" data-dots-for="testimonials" style="margin-top: 24px;">
+    <button type="button" class="active" aria-label="Aanbeveling 1"></button>
+    <button type="button" aria-label="Aanbeveling 2"></button>
+    <button type="button" aria-label="Aanbeveling 3"></button>
+    <button type="button" aria-label="Aanbeveling 4"></button>
+    <button type="button" aria-label="Aanbeveling 5"></button>
+    <button type="button" aria-label="Aanbeveling 6"></button>
+  </div>
   <div class="testimonials-cta">
     <a href="aanbevelingen.html" class="btn btn-secondary">Lees alle 75 aanbevelingen &rarr;</a>
   </div>
@@ -654,5 +723,58 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
     </div>
   </div>
 </footer>
+<script>
+(function() {
+  function initSlider(gridSelector, dotsAttr) {
+    var grid = document.querySelector(gridSelector);
+    var dotsContainer = document.querySelector('[data-dots-for="' + dotsAttr + '"]');
+    if (!grid || !dotsContainer) return;
+    var cards = grid.children;
+    var dots = dotsContainer.querySelectorAll('button');
+
+    function setActive(index) {
+      for (var i = 0; i < dots.length; i++) {
+        if (i === index) dots[i].classList.add('active');
+        else dots[i].classList.remove('active');
+      }
+    }
+
+    var scrollTimer;
+    grid.addEventListener('scroll', function() {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(function() {
+        var center = grid.scrollLeft + grid.clientWidth / 2;
+        var closest = 0;
+        var closestDistance = Infinity;
+        for (var i = 0; i < cards.length; i++) {
+          var cardCenter = cards[i].offsetLeft + cards[i].offsetWidth / 2;
+          var distance = Math.abs(cardCenter - center);
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closest = i;
+          }
+        }
+        setActive(Math.min(closest, dots.length - 1));
+      }, 80);
+    }, { passive: true });
+
+    for (var i = 0; i < dots.length; i++) {
+      (function(idx) {
+        dots[idx].addEventListener('click', function() {
+          if (cards[idx]) {
+            var target = cards[idx].offsetLeft - (grid.clientWidth - cards[idx].offsetWidth) / 2;
+            grid.scrollTo({ left: target, behavior: 'smooth' });
+          }
+        });
+      })(i);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    initSlider('.mentors-grid', 'mentors');
+    initSlider('.testimonials-grid', 'testimonials');
+  });
+})();
+</script>
 </body>
 </html>
