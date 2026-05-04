@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Executive Coach Arnhem. Clifford Training &amp; Coaching, Dave Clifford</title>
-<meta name="description" content="Executive coach en leiderschapstrainer in Arnhem. Dave Clifford begeleidt al 22 jaar directeuren, DGA&#39;s, MT-leden en senior managers in Arnhem, Nijmegen, Apeldoorn, Utrecht en Den Bosch naar scherper leiderschap en blijvende verandering. Nederlands en Engels. Trustoo 9.6.">
+<meta name="description" content="Executive coach en leiderschapstrainer in Arnhem. Dave Clifford begeleidt al 22 jaar directeuren, DGA&#39;s en senior managers in Arnhem, Nijmegen, Apeldoorn, Utrecht en Den Bosch naar scherper leiderschap en blijvende verandering. Nederlands en Engels. Trustoo 9.6.">
 <meta name="keywords" content="executive coach, leiderschapstraining, business coaching, burn-out coach, Arnhem, situationeel leiderschap, Sociaal Panorama, NLP, Dave Clifford, Clifford Training">
 <meta name="author" content="Dave Clifford">
 <link rel="canonical" href="https://www.cliffordtraining.nl/">
@@ -32,7 +32,7 @@
 :root {
   --ink: #0E1B2C; --ink-soft: #2A3A52; --ink-light: #4D5979;
   --paper: #F5F1EA; --paper-warm: #EAE3D6; --paper-deep: #DCD2BD;
-  --accent: #9A3D17; --accent-soft: #E8B898; --accent-deep: #6D2B0F;
+  --accent: #B8501F; --accent-soft: #EDC0A2; --accent-deep: #8A3A12;
   --gold: #B8924A;
   --line: rgba(14, 27, 44, 0.12); --line-strong: rgba(14, 27, 44, 0.25);
   --shadow-sm: 0 2px 8px rgba(14, 27, 44, 0.06);
@@ -50,7 +50,7 @@ a:hover { color: var(--accent); }
 ::selection { background: var(--accent); color: var(--paper); }
 
 /* NAV */
-.site-nav { position: sticky; top: 0; z-index: 100; background: rgba(245,241,234,0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); padding: 16px 0; }
+.site-nav { position: sticky; top: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--line); padding: 16px 0; }
 .nav-inner { max-width: 1320px; margin: 0 auto; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .logo { display: inline-flex; align-items: center; gap: 8px; line-height: 0; }
 .logo img, .logo svg { display: block; height: 60px; width: auto; }
@@ -93,10 +93,7 @@ a:hover { color: var(--accent); }
 .section { max-width: 1320px; margin: 0 auto; padding: 100px 32px; }
 .section-narrow { max-width: 880px; margin: 0 auto; padding: 80px 32px; }
 @media (max-width: 768px) { .section, .section-narrow { padding: 64px 20px; } }
-.eyebrow { display: inline-flex; align-items: center; gap: 12px; font-size: 12px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px; }
-.eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--accent); }
-.dark-section .eyebrow { color: var(--accent-soft); }
-.dark-section .eyebrow::before { background: var(--accent-soft); }
+.eyebrow { display: none; }
 h1.page-title { font-size: clamp(40px, 6vw, 76px); margin-bottom: 24px; line-height: 1.02; }
 h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; line-height: 1.05; }
 .lead { font-size: 19px; color: var(--ink-soft); line-height: 1.55; max-width: 640px; }
@@ -129,8 +126,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 .hero-dark h1 { color: var(--paper); }
 .hero-dark h1 em { color: var(--accent-soft); }
 .hero-dark p.lead { color: rgba(245,241,234,0.85); }
-.hero-dark .eyebrow, .eyebrow-dark { color: var(--accent-soft); }
-.hero-dark .eyebrow::before, .eyebrow-dark::before { background: var(--accent-soft); }
+.hero-dark .eyebrow, .eyebrow-dark { display: none; }
 .hero-stats { margin-top: 40px; padding-top: 36px; border-top: 1px solid rgba(245,241,234,0.15); }
 .hero-stats .stat-num { font-family: 'Fraunces', serif; font-size: 48px; color: var(--accent-soft); font-weight: 300; line-height: 1; }
 .hero-stats .stat-label { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px; opacity: 0.7; color: var(--paper); }
@@ -143,9 +139,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 .page-header-inner { max-width: 1320px; margin: 0 auto; }
 .page-header h1 { font-size: clamp(40px, 5.5vw, 64px); margin-bottom: 20px; max-width: 900px; }
 .page-header .lead { font-size: 19px; max-width: 720px; }
-.breadcrumbs { font-size: 13px; color: var(--ink-light); margin-bottom: 20px; }
-.breadcrumbs a { color: var(--ink-light); }
-.breadcrumbs a:hover { color: var(--accent); }
+.breadcrumbs { display: none; }
 
 /* TRUST BAR */
 .trust-bar { padding: 80px 32px; background: var(--paper-warm); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
@@ -348,18 +342,62 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
 
 /* FOOTER */
 .site-footer { background: var(--ink); color: var(--paper); padding: 64px 32px 32px; }
-.footer-inner { max-width: 1320px; margin: 0 auto; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(245,241,234,0.15); align-items: start; }
-.footer-grid h4 { font-family: 'Inter', sans-serif; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 18px; opacity: 0.6; color: var(--paper); font-weight: 500; }
-.footer-grid a { display: block; color: var(--paper); padding: 5px 0; font-size: 14px; opacity: 0.85; }
-.footer-brand p a { display: inline; opacity: 1; padding: 0; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 64px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(245,241,234,0.15);
+}
+.footer-brand { flex: 1 1 240px; }
+.footer-col { flex: 1 1 180px; }
+.footer-grid h4, .footer-grid h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  opacity: 0.6;
+  color: var(--paper);
+  font-weight: 500;
+}
+.footer-grid a {
+  display: block;
+  color: var(--paper);
+  padding: 5px 0;
+  font-size: 14px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
 .footer-grid a:hover { color: var(--accent-soft); opacity: 1; }
-.footer-brand .logo img { height: 64px; }
-.footer-brand p { margin-top: 14px; opacity: 0.7; font-size: 14px; max-width: 320px; }
-.footer-bottom { padding-top: 28px; display: flex; justify-content: space-between; font-size: 13px; flex-wrap: wrap; gap: 14px; color: rgba(245,241,234,0.8); }
-.footer-bottom a { color: var(--accent-soft); text-decoration: underline; text-decoration-color: rgba(232,184,152,0.5); text-underline-offset: 3px; }
+.footer-brand .logo img,
+.footer-brand .footer-logo { height: 64px; width: auto; margin-bottom: 24px; }
+.footer-brand-contact { margin-top: 8px; }
+.footer-bottom {
+  padding-top: 28px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: rgba(245,241,234,0.8);
+}
+.footer-bottom a {
+  color: var(--accent-soft);
+  text-decoration: underline;
+  text-decoration-color: rgba(237,192,162,0.5);
+  text-underline-offset: 3px;
+}
 .footer-bottom a:hover { color: var(--paper); text-decoration-color: var(--paper); }
-@media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (max-width: 900px) {
+  .footer-grid { gap: 40px 36px; }
+}
+@media (max-width: 640px) {
+  .site-footer { padding: 48px 24px 24px; }
+  .footer-grid { gap: 36px; padding-bottom: 36px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
 
 /* SR-ONLY */
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
@@ -408,6 +446,13 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
   ]
 }
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLGZ1ZMHXG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-VLGZ1ZMHXG');
+</script>
 </head>
 <body>
 <nav class="site-nav" id="siteNav" aria-label="Hoofdnavigatie">
@@ -451,7 +496,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
     <div>
       <div class="eyebrow eyebrow-dark">Executive Coaching &middot; Leiderschapstraining &middot; Arnhem</div>
       <h1>Leiders die <em>echt</em> bewegen, beginnen bij innerlijke rust.</h1>
-      <p class="lead">Al ruim 20 jaar begeleidt Dave Clifford directeuren, DGA&#39;s, MT-leden en senior managers bij het maken van heldere keuzes, het versterken van hun leiderschap en het realiseren van duurzame resultaten. Wat klanten meestal benoemen is: meer rust, meer focus en opnieuw plezier in hun werk. Hij coacht en traint in het Nederlands en Engels en werkt vanuit Arnhem voor leiders in onder meer Nijmegen, Apeldoorn, Utrecht en Den Bosch.</p>
+      <p class="lead">Al ruim 20 jaar begeleidt Dave Clifford directeuren, DGA&#39;s en senior managers bij het maken van heldere keuzes, het versterken van hun leiderschap en het realiseren van duurzame resultaten. Wat klanten meestal benoemen is: meer rust, meer focus en opnieuw plezier in hun werk. Hij coacht en traint in het Nederlands en Engels en werkt vanuit Arnhem voor leiders in onder meer Nijmegen, Apeldoorn, Utrecht en Den Bosch.</p>
       <div class="button-row" style="margin-top: 32px;">
         <a href="contact.html" class="btn btn-primary-light">Plan een gesprek &rarr;</a>
       </div>
@@ -463,8 +508,20 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
     </div>
     <div class="hero-image">
       <picture>
-        <source srcset="assets/img/01-dave-clifford-hero-portrait.webp" type="image/webp">
-        <img src="assets/img/01-dave-clifford-hero-portrait.jpg" alt="Dave Clifford, senior executive coach en leiderschapstrainer in Arnhem" loading="eager" fetchpriority="high" width="1024" height="1536">
+        <source
+          type="image/webp"
+          srcset="assets/img/01-dave-clifford-hero-portrait-640.webp 640w,
+                  assets/img/01-dave-clifford-hero-portrait-800.webp 800w,
+                  assets/img/01-dave-clifford-hero-portrait.webp 1024w"
+          sizes="(max-width: 640px) 100vw, (max-width: 968px) 80vw, 45vw">
+        <img
+          src="assets/img/01-dave-clifford-hero-portrait-800.jpg"
+          srcset="assets/img/01-dave-clifford-hero-portrait-640.jpg 640w,
+                  assets/img/01-dave-clifford-hero-portrait-800.jpg 800w,
+                  assets/img/01-dave-clifford-hero-portrait.jpg 1024w"
+          sizes="(max-width: 640px) 100vw, (max-width: 968px) 80vw, 45vw"
+          alt="Dave Clifford, senior executive coach en leiderschapstrainer in Arnhem"
+          loading="eager" fetchpriority="high" width="1024" height="1536">
       </picture>
       <div class="hero-image-caption">&ldquo;Als je focust op resultaat, zul je nooit veranderen. Als je focust op verandering, zul je resultaat zien.&rdquo;</div>
     </div>
@@ -493,7 +550,7 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
       <a href="coaching/executive-coaching.html" class="service-card">
         <div class="service-num">01 / Executive</div>
         <h3>Executive Coaching</h3>
-        <p>Voor directeuren, DGA&#39;s en MT-leden die hun impact, besluitvaardigheid en stakeholdermanagement naar een hoger niveau willen tillen.</p>
+        <p>Voor directeuren, DGA&#39;s en senior managers die hun impact, besluitvaardigheid en stakeholdermanagement naar een hoger niveau willen tillen.</p>
         <span class="service-link">Lees meer over Executive Coaching &rarr;</span>
       </a>
       <a href="coaching/loopbaancoaching.html" class="service-card">
@@ -729,35 +786,37 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
   <div class="footer-inner">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo"><img src="assets/logo-clifford-white.svg" alt="Clifford Training &amp; Coaching" width="191" height="70" onerror="this.style.display='none';this.parentNode.innerHTML='&lt;span class=&quot;logo-text-fallback-white&quot;&gt;Clifford &lt;span style=&quot;color:#C25F3C&quot;&gt;&amp;bull;&lt;/span&gt; Training &amp;amp; Coaching&lt;/span&gt;';"></div>
+        <img src="assets/logo-clifford-white.svg" alt="Clifford Training &amp; Coaching" width="220" height="80" class="footer-logo" onerror="this.style.display='none';this.parentNode.innerHTML+='&lt;span class=&quot;footer-brand-text&quot;&gt;Clifford &lt;span style=&quot;color:#EDC0A2&quot;&gt;&amp;bull;&lt;/span&gt; Training &amp;amp; Coaching&lt;/span&gt;';">
+        <div class="footer-brand-contact">
+          <a href="contact.html">Eusebiusbuitensingel 7<br>6828 HT Arnhem</a>
+          <a href="tel:+31642249079">06 42 24 90 79</a>
+          <a href="mailto:info@cliffordtraining.nl">info@cliffordtraining.nl</a>
+          <a href="https://www.linkedin.com/in/cliffordtraining" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://www.instagram.com/cliffordtraining" target="_blank" rel="noopener">Instagram</a>
+        </div>
       </div>
-      <div>
-        <h3>Coaching voor leiders</h3>
+      <div class="footer-col">
+        <h4>Coaching voor leiders</h4>
         <a href="coaching/executive-coaching.html">Executive Coaching</a>
         <a href="coaching/loopbaancoaching.html">Loopbaan &amp; Positionering</a>
         <a href="coaching/burnout-coaching.html">Herstel &amp; Balans</a>
         <a href="sociaal-panorama-coaching.html">Sociaal Panorama Coaching</a>
       </div>
-      <div>
-        <h3>Leiderschapstrainingen</h3>
+      <div class="footer-col">
+        <h4>Leiderschapstrainingen</h4>
         <a href="training/praktisch-leidinggeven.html">Praktisch Leidinggeven</a>
         <a href="training/verandermanagement.html">Verandering &amp; Groei</a>
         <a href="training/persoonlijk-leiderschap.html">Persoonlijk Leiderschap</a>
       </div>
-      <div>
-        <h3>Contact</h3>
-        <a href="contact.html">Eusebiusbuitensingel 7<br>6828 HT Arnhem</a>
-        <a href="tel:+31642249079">06 42 24 90 79</a>
-        <a href="mailto:info@cliffordtraining.nl">info@cliffordtraining.nl</a>
-        <a href="https://www.linkedin.com/in/cliffordtraining" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://www.instagram.com/cliffordtraining" target="_blank" rel="noopener">Instagram</a>
-        <div style="font-size: 14px; opacity: 0.6; padding-top: 12px; margin-top: 8px; border-top: 1px solid rgba(245,241,234,0.12);">KvK 09145392</div>
-      </div>
     </div>
     <div class="footer-bottom">
       <div>&copy; 2026 Clifford Training &amp; Coaching</div>
-      <div><a href="privacy.html">Privacy</a> &middot; <a href="cookies.html">Cookies</a> &middot; <a href="voorwaarden.html">Algemene Voorwaarden</a> &middot;
-        <a href="werkgebied.html">Werkgebied</a></div>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy</a> &middot;
+        <a href="cookies.html">Cookies</a> &middot;
+        <a href="voorwaarden.html">Algemene Voorwaarden</a> &middot;
+        <a href="werkgebied.html">Werkgebied</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -767,8 +826,9 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
     var grid = document.querySelector(gridSelector);
     var dotsContainer = document.querySelector('[data-dots-for="' + dotsAttr + '"]');
     if (!grid || !dotsContainer) return;
-    var cards = grid.children;
+    var cards = Array.prototype.slice.call(grid.children);
     var dots = dotsContainer.querySelectorAll('button');
+    if (!cards.length || !dots.length) return;
 
     function setActive(index) {
       for (var i = 0; i < dots.length; i++) {
@@ -777,41 +837,53 @@ h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; lin
       }
     }
 
-    var scrollTimer;
-    grid.addEventListener('scroll', function() {
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(function() {
-        var center = grid.scrollLeft + grid.clientWidth / 2;
-        var closest = 0;
-        var closestDistance = Infinity;
-        for (var i = 0; i < cards.length; i++) {
-          var cardCenter = cards[i].offsetLeft + cards[i].offsetWidth / 2;
-          var distance = Math.abs(cardCenter - center);
-          if (distance < closestDistance) {
-            closestDistance = distance;
-            closest = i;
+    // Use IntersectionObserver to detect which card is most visible
+    // This avoids forced reflows from reading offsetLeft/offsetWidth on scroll
+    if ('IntersectionObserver' in window) {
+      var visibility = new Array(cards.length).fill(0);
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          var idx = cards.indexOf(entry.target);
+          if (idx >= 0) visibility[idx] = entry.intersectionRatio;
+        });
+        // Find most visible card index (capped to dots length)
+        var maxRatio = 0, mostVisible = 0;
+        for (var i = 0; i < visibility.length; i++) {
+          if (visibility[i] > maxRatio) {
+            maxRatio = visibility[i];
+            mostVisible = i;
           }
         }
-        setActive(Math.min(closest, dots.length - 1));
-      }, 80);
-    }, { passive: true });
+        setActive(Math.min(mostVisible, dots.length - 1));
+      }, { root: grid, threshold: [0.25, 0.5, 0.75, 1.0] });
 
+      cards.forEach(function(card) { observer.observe(card); });
+    }
+
+    // Click on dot scrolls to corresponding card
     for (var i = 0; i < dots.length; i++) {
       (function(idx) {
         dots[idx].addEventListener('click', function() {
           if (cards[idx]) {
-            var target = cards[idx].offsetLeft - (grid.clientWidth - cards[idx].offsetWidth) / 2;
-            grid.scrollTo({ left: target, behavior: 'smooth' });
+            cards[idx].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
           }
         });
       })(i);
     }
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
+  // Only init slider on viewports where grid is in scrollable mode (mobile/tablet)
+  function maybeInit() {
+    if (window.innerWidth > 968) return;
     initSlider('.mentors-grid', 'mentors');
     initSlider('.testimonials-grid', 'testimonials');
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', maybeInit);
+  } else {
+    maybeInit();
+  }
 })();
 </script>
 </body>
