@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /admin/
-Disallow: /wp-admin/
-Disallow: /*.json$
-
-Sitemap: https://www.cliffordtraining.nl/sitemap.xml
