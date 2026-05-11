@@ -23,7 +23,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/logo-clifford.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" href="assets/img/01-dave-clifford-hero-portrait-400.webp" type="image/webp" imagesrcset="assets/img/01-dave-clifford-hero-portrait-400.webp 400w, assets/img/01-dave-clifford-hero-portrait-640.webp 640w, assets/img/01-dave-clifford-hero-portrait-800.webp 800w" imagesizes="(max-width: 640px) 100vw, (max-width: 968px) 80vw, 45vw" fetchpriority="high">
+<link rel="preload" as="image" href="assets/img/01-dave-clifford-hero-portrait-400.webp" type="image/webp" imagesrcset="assets/img/01-dave-clifford-hero-portrait-400.webp 400w, assets/img/01-dave-clifford-hero-portrait-640.webp 640w, assets/img/01-dave-clifford-hero-portrait-800.webp 800w" imagesizes="(max-width: 640px) 89vw, (max-width: 968px) 80vw, 45vw" fetchpriority="high">
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@400;500;600&amp;display=swap" as="style">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"></noscript>
@@ -71,12 +71,28 @@
   ]
 }
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLGZ1ZMHXG"></script>
 <script>
+  // GA4 vertraagd laden: na eerste interactie of na 3s, wat het eerst komt
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-VLGZ1ZMHXG');
+  (function(){
+    var loaded = false;
+    function loadGA(){
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VLGZ1ZMHXG';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-VLGZ1ZMHXG');
+    }
+    var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+    events.forEach(function(e){
+      window.addEventListener(e, loadGA, { once: true, passive: true });
+    });
+    setTimeout(loadGA, 3000);
+  })();
 </script>
 </head>
 <body>
@@ -139,14 +155,14 @@
                   assets/img/01-dave-clifford-hero-portrait-640.webp 640w,
                   assets/img/01-dave-clifford-hero-portrait-800.webp 800w,
                   assets/img/01-dave-clifford-hero-portrait.webp 1024w"
-          sizes="(max-width: 640px) 100vw, (max-width: 968px) 80vw, 45vw">
+          sizes="(max-width: 640px) 89vw, (max-width: 968px) 80vw, 45vw">
         <img
           src="assets/img/01-dave-clifford-hero-portrait-640.jpg"
           srcset="assets/img/01-dave-clifford-hero-portrait-400.jpg 400w,
                   assets/img/01-dave-clifford-hero-portrait-640.jpg 640w,
                   assets/img/01-dave-clifford-hero-portrait-800.jpg 800w,
                   assets/img/01-dave-clifford-hero-portrait.jpg 1024w"
-          sizes="(max-width: 640px) 100vw, (max-width: 968px) 80vw, 45vw"
+          sizes="(max-width: 640px) 89vw, (max-width: 968px) 80vw, 45vw"
           alt="Dave Clifford, senior executive coach en leiderschapstrainer in Arnhem"
           loading="eager" fetchpriority="high" width="1024" height="1536">
       </picture>

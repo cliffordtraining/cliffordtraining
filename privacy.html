@@ -16,12 +16,28 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"></noscript>
 <link rel="stylesheet" href="assets/style.css">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLGZ1ZMHXG"></script>
 <script>
+  // GA4 vertraagd laden: na eerste interactie of na 3s, wat het eerst komt
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-VLGZ1ZMHXG');
+  (function(){
+    var loaded = false;
+    function loadGA(){
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VLGZ1ZMHXG';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-VLGZ1ZMHXG');
+    }
+    var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+    events.forEach(function(e){
+      window.addEventListener(e, loadGA, { once: true, passive: true });
+    });
+    setTimeout(loadGA, 3000);
+  })();
 </script>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.cliffordtraining.nl/privacy.html">
