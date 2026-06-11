@@ -71,6 +71,7 @@ a:hover { color: var(--accent); }
 .section-narrow { max-width: var(--w-default); margin: 0 auto; padding: 80px 32px; }
 @media (max-width: 768px) { .section, .section-narrow { padding: 64px 20px; } }
 .eyebrow { display: none; }
+.page-header .eyebrow { display: block; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-weight: 500; margin-bottom: 18px; }
 h1.page-title { font-size: clamp(40px, 6vw, 76px); margin-bottom: 24px; line-height: 1.02; }
 h2.section-title { font-size: clamp(32px, 4.5vw, 56px); margin-bottom: 24px; line-height: 1.05; }
 .lead { font-size: 19px; color: var(--ink-soft); line-height: 1.55; max-width: var(--w-narrow); }
