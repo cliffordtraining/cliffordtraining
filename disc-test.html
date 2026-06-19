@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DiSC-zelfscan. Ontdek je gedragsstijl. Clifford Training</title>
+<meta name="description" content="Doe de gratis DiSC-zelfscan en ontdek in een paar minuten waar je accent ligt: rood, geel, groen of blauw. Een eerste indicatie van je gedragsstijl als leider.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://www.cliffordtraining.nl/disc-test.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="DiSC-zelfscan. Ontdek je gedragsstijl.">
+<meta property="og:description" content="Doe de gratis DiSC-zelfscan en ontdek waar je accent ligt: rood, geel, groen of blauw.">
+<meta property="og:image" content="https://www.cliffordtraining.nl/assets/img/01-portret-raam-staand.jpg">
+<meta property="og:url" content="https://www.cliffordtraining.nl/disc-test.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1B2C;
+    --ink-soft:#3D4A5C;
+    --paper:#F5F1EA;
+    --paper-warm:#EDE7DC;
+    --accent:#B8501F;
+    --d:#9E3B30;
+    --i:#C8862B;
+    --s:#5E7C5A;
+    --c:#3E5C78;
+    --line:rgba(14,27,44,.12);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size:18px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:680px;margin:0 auto;padding:0 24px;}
+
+  header.site{
+    border-bottom:1px solid var(--line);
+  }
+  header.site .wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding-top:22px;padding-bottom:22px;
+  }
+  .brand{display:inline-flex;align-items:center;text-decoration:none;}
+  .logo{height:44px;width:auto;display:block;}
+  .nav-cta{
+    font-size:15px;font-weight:500;text-decoration:none;
+    color:var(--ink);border:1px solid var(--ink);
+    padding:9px 18px;border-radius:2px;
+    transition:background .2s ease,color .2s ease;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--paper);}
+
+  main{padding:56px 0 88px;}
+
+  .eyebrow{
+    font-size:13px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent);margin-bottom:18px;
+  }
+  h1{
+    font-family:'Fraunces',Georgia,serif;
+    font-weight:500;font-size:clamp(34px,6vw,52px);
+    line-height:1.08;margin:0 0 22px;letter-spacing:-.01em;
+  }
+  .lead{font-size:19px;color:var(--ink-soft);margin:0 0 14px;}
+  .fineprint{font-size:15px;color:var(--ink-soft);margin:0 0 34px;}
+
+  .btn{
+    display:inline-block;cursor:pointer;border:none;
+    font-family:'Inter',sans-serif;font-size:17px;font-weight:500;
+    background:var(--accent);color:#fff;
+    padding:15px 30px;border-radius:2px;text-decoration:none;
+    transition:opacity .2s ease;
+  }
+  .btn:hover{opacity:.9;}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink);}
+  .btn-ghost:hover{background:var(--ink);color:var(--paper);opacity:1;}
+  .btn:focus-visible,.option:focus-visible,.nav-cta:focus-visible,.backlink:focus-visible{
+    outline:2px solid var(--accent);outline-offset:3px;
+  }
+
+  /* progress */
+  .progress-head{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:14px;font-size:14px;color:var(--ink-soft);
+    font-weight:500;letter-spacing:.02em;
+  }
+  .progress-track{height:3px;background:var(--paper-warm);border-radius:2px;overflow:hidden;margin-bottom:40px;}
+  .progress-bar{height:100%;width:0;background:var(--accent);transition:width .4s ease;}
+
+  .question{
+    font-family:'Fraunces',Georgia,serif;font-weight:500;
+    font-size:clamp(24px,4.5vw,32px);line-height:1.2;
+    margin:0 0 30px;letter-spacing:-.01em;
+  }
+  .options{display:flex;flex-direction:column;gap:12px;}
+  .option{
+    text-align:left;cursor:pointer;
+    background:var(--paper-warm);border:1px solid transparent;
+    color:var(--ink);font-family:'Inter',sans-serif;font-size:17px;
+    padding:18px 20px;border-radius:3px;line-height:1.4;
+    transition:border-color .15s ease,transform .1s ease;
+  }
+  .option:hover{border-color:var(--ink);}
+  .option:active{transform:scale(.995);}
+
+  .backlink{
+    display:inline-block;margin-top:30px;background:none;border:none;cursor:pointer;
+    font-family:'Inter',sans-serif;font-size:15px;color:var(--ink-soft);
+    text-decoration:underline;text-underline-offset:3px;padding:0;
+  }
+  .backlink:hover{color:var(--ink);}
+
+  /* result */
+  .result-accent{
+    font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .result-title{
+    font-family:'Fraunces',Georgia,serif;font-weight:500;
+    font-size:clamp(30px,5.5vw,46px);line-height:1.1;margin:0 0 24px;letter-spacing:-.01em;
+  }
+  .result-body{font-size:19px;color:var(--ink);margin:0 0 22px;}
+  .second{font-size:17px;color:var(--ink-soft);margin:0 0 30px;}
+  .bars{margin:8px 0 34px;display:flex;flex-direction:column;gap:14px;}
+  .bar-row{display:flex;align-items:center;gap:14px;font-size:14px;}
+  .bar-label{flex:0 0 132px;font-weight:500;color:var(--ink-soft);}
+  .bar-track{flex:1;height:8px;background:var(--paper-warm);border-radius:4px;overflow:hidden;}
+  .bar-fill{height:100%;width:0;border-radius:4px;transition:width .7s ease;}
+
+  .closing{
+    border-top:1px solid var(--line);padding-top:30px;margin-top:6px;
+  }
+  .closing p{font-size:18px;color:var(--ink-soft);margin:0 0 26px;}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;}
+
+  .capture{border-top:1px solid var(--line);margin-top:34px;padding-top:30px;}
+  .capture-intro{font-size:16px;color:var(--ink-soft);margin:0 0 18px;max-width:56ch;}
+  .capture-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+  .capture-row input{
+    flex:1;min-width:200px;font-family:'Inter',sans-serif;font-size:16px;
+    padding:13px 16px;border:1px solid var(--line);border-radius:3px;
+    background:#fff;color:var(--ink);
+  }
+  .capture-row input:focus-visible{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent);}
+  .capture-btn{cursor:pointer;}
+  .hp{position:absolute;left:-9999px;}
+  .capture-status{font-size:16px;color:var(--ink);background:var(--paper-warm);padding:14px 16px;border-radius:3px;margin:0;}
+
+  footer.site{background:var(--ink);color:var(--paper);}
+  .footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:54px 24px 38px;}
+  .logo-white{height:48px;width:auto;display:block;margin-bottom:20px;}
+  .footer-contact{font-size:15px;line-height:1.85;color:rgba(245,241,234,.72);margin:0;}
+  .footer-col h4{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:17px;margin:0 0 14px;color:var(--paper);}
+  .footer-col a{display:block;font-size:15px;color:rgba(245,241,234,.72);text-decoration:none;padding:4px 0;transition:color .15s ease;}
+  footer.site a{color:rgba(245,241,234,.72);}
+  .footer-col a:hover,.footer-contact a:hover,.footer-bottom a:hover{color:#fff;}
+  .footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:22px 24px;border-top:1px solid rgba(245,241,234,.14);font-size:14px;color:rgba(245,241,234,.6);}
+  .footer-bottom a{color:rgba(245,241,234,.6);}
+  @media(max-width:600px){.footer-top{grid-template-columns:1fr;gap:30px;}}
+
+  .step{display:none;}
+  .step.active{display:block;animation:fade .35s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important;transition:none!important;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo" src="https://www.cliffordtraining.nl/assets/logo-clifford.svg" alt="Clifford Training &amp; Coaching"></a>
+    <a class="nav-cta" href="contact.html">Plan een gesprek</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- INTRO -->
+    <section id="intro" class="step active">
+      <div class="eyebrow">DiSC-zelfscan</div>
+      <h1>Waar ligt jouw accent: rood, geel, groen of blauw?</h1>
+      <p class="lead">Twaalf korte vragen over hoe je werkt, beslist en met anderen omgaat. Aan het eind zie je waar je accent ligt en wat dat zegt over je gedrag als leider.</p>
+      <p class="fineprint">Het kost ongeveer drie minuten. Dit is een eerste indicatie. Een volledig DiSC-profiel met Dave gaat dieper, ook op je tweede kleur en op wat je gedrag stuurt onder druk.</p>
+      <button class="btn" id="start">Start de zelfscan</button>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="step">
+      <div class="progress-head">
+        <span id="qcount">Vraag 1 van 12</span>
+      </div>
+      <div class="progress-track"><div class="progress-bar" id="bar"></div></div>
+      <h2 class="question" id="qtext"></h2>
+      <div class="options" id="opts"></div>
+      <button class="backlink" id="back">← Vorige vraag</button>
+    </section>
+
+    <!-- RESULT -->
+    <section id="result" class="step">
+      <div class="result-accent" id="raccent">Jouw accent</div>
+      <h2 class="result-title" id="rtitle"></h2>
+      <p class="result-body" id="rbody"></p>
+      <p class="second" id="rsecond"></p>
+      <div class="bars" id="bars"></div>
+      <div class="closing">
+        <p>Herken je jezelf hierin? Een eerste indicatie zegt iets over je voorkeur, een gesprek laat zien hoe je het inzet en waar het je in de weg zit.</p>
+        <div class="cta-row">
+          <a class="btn" href="contact.html">Plan een gesprek</a>
+          <a class="btn btn-ghost" href="disc-profiel.html">Lees meer over DiSC</a>
+        </div>
+        <div class="capture" id="capture">
+          <p class="capture-intro">Liever eerst een korte, persoonlijke toelichting op je uitslag? Laat je naam en mailadres achter, dan stuurt Dave je een reactie. Geen nieuwsbrief, geen verplichtingen.</p>
+          <form id="captureForm">
+            <input type="hidden" name="access_key" value="bf2e2212-b449-473f-8954-22d31f7dd0e5">
+            <input type="hidden" name="from_name" value="DiSC-zelfscan">
+            <input type="hidden" name="subject" value="Nieuwe DiSC-zelfscan: verzoek om toelichting">
+            <input type="hidden" name="DiSC-indicatie" id="discResult" value="">
+            <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off">
+            <div class="capture-row">
+              <input type="text" name="naam" placeholder="Je naam" required>
+              <input type="email" name="email" placeholder="Je e-mailadres" required>
+            </div>
+            <button type="submit" class="btn btn-ghost capture-btn">Stuur mij mijn toelichting</button>
+          </form>
+          <p class="capture-status" id="captureStatus" style="display:none;"></p>
+        </div>
+        <button class="backlink" id="restart">Opnieuw doen</button>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <img class="logo-white" src="https://www.cliffordtraining.nl/assets/logo-clifford-white.svg" alt="Clifford Training &amp; Coaching">
+      <p class="footer-contact">
+        Eusebiusbuitensingel 7<br>6828 HT Arnhem<br>
+        <a href="tel:+31642249079">06 42 24 90 79</a><br>
+        <a href="mailto:info@cliffordtraining.nl">info@cliffordtraining.nl</a>
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Coaching voor leiders</h4>
+      <a href="coaching/executive-coaching.html">Executive Coaching</a>
+      <a href="coaching/business-coaching.html">Business Coaching</a>
+      <a href="coaching/loopbaancoaching.html">Loopbaan &amp; Positionering</a>
+      <a href="coaching/burnout-coaching.html">Herstel &amp; Balans</a>
+      <a href="sociaal-panorama-coaching.html">Sociaal Panorama Coaching</a>
+    </div>
+    <div class="footer-col">
+      <h4>Leiderschap &amp; DiSC</h4>
+      <a href="training/praktisch-leidinggeven.html">Praktisch Leidinggeven</a>
+      <a href="training/verandermanagement.html">Verandering &amp; Groei</a>
+      <a href="training/persoonlijk-leiderschap.html">Persoonlijk Leiderschap</a>
+      <a href="disc-profiel.html">DiSC-profiel</a>
+      <a href="disc-profielen.html">DiSC-kleuren</a>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>© 2026 Clifford Training &amp; Coaching</span>
+    <span><a href="werkgebied.html">Werkgebied</a> · <a href="contact.html">Contact</a></span>
+  </div>
+</footer>
+
+<script>
+  const questions = [
+    {q:"In een vergadering ben jij vooral degene die...", a:[
+      {t:"de knoop doorhakt en tempo maakt", k:"D"},
+      {t:"de sfeer aanjaagt en mensen meekrijgt", k:"I"},
+      {t:"ruimte maakt zodat iedereen aan bod komt", k:"S"},
+      {t:"de cijfers en details kloppend houdt", k:"C"}]},
+    {q:"Een nieuw project start. Jij begint met...", a:[
+      {t:"een helder doel en een deadline", k:"D"},
+      {t:"het enthousiasme van het team aanwakkeren", k:"I"},
+      {t:"rust brengen en een werkbaar plan", k:"S"},
+      {t:"een grondige analyse van de risico's", k:"C"}]},
+    {q:"Onder druk merk je dat je...", a:[
+      {t:"directer en beslister wordt", k:"D"},
+      {t:"meer gaat praten en overtuigen", k:"I"},
+      {t:"kalm blijft en de boel bij elkaar houdt", k:"S"},
+      {t:"je terugtrekt om eerst goed na te denken", k:"C"}]},
+    {q:"Wat geeft je het meeste energie?", a:[
+      {t:"resultaat boeken en vooruitgang zien", k:"D"},
+      {t:"mensen, contact en nieuwe ideeën", k:"I"},
+      {t:"een hecht team en een vaste koers", k:"S"},
+      {t:"iets tot in de puntjes kloppend krijgen", k:"C"}]},
+    {q:"Collega's waarderen vooral jouw...", a:[
+      {t:"daadkracht", k:"D"},
+      {t:"enthousiasme", k:"I"},
+      {t:"betrouwbaarheid", k:"S"},
+      {t:"grondigheid", k:"C"}]},
+    {q:"Er speelt een conflict in je team. Jij...", a:[
+      {t:"benoemt het direct en zoekt een oplossing", k:"D"},
+      {t:"praat het uit en herstelt de sfeer", k:"I"},
+      {t:"bemiddelt rustig tussen de partijen", k:"S"},
+      {t:"zoekt uit wat er feitelijk is gebeurd", k:"C"}]},
+    {q:"Bij een belangrijke beslissing wil je vooral...", a:[
+      {t:"snel kunnen schakelen", k:"D"},
+      {t:"kunnen sparren met anderen", k:"I"},
+      {t:"zekerheid dat het goed valt bij iedereen", k:"S"},
+      {t:"alle gegevens op een rij", k:"C"}]},
+    {q:"Verandering op het werk voelt voor jou als...", a:[
+      {t:"een kans om vooruit te gaan", k:"D"},
+      {t:"iets om anderen voor warm te maken", k:"I"},
+      {t:"iets dat tijd en rust vraagt", k:"S"},
+      {t:"iets dat je eerst goed wilt begrijpen", k:"C"}]},
+    {q:"Jouw valkuil is af en toe...", a:[
+      {t:"te ongeduldig", k:"D"},
+      {t:"te veel hooi op je vork", k:"I"},
+      {t:"te lang vasthouden aan het vertrouwde", k:"S"},
+      {t:"te lang willen perfectioneren", k:"C"}]},
+    {q:"In een gesprek let je vooral op...", a:[
+      {t:"de hoofdlijn en het doel", k:"D"},
+      {t:"de klik en de toon", k:"I"},
+      {t:"of iedereen zich op zijn gemak voelt", k:"S"},
+      {t:"of het klopt en consistent is", k:"C"}]},
+    {q:"Een goede werkdag eindigt met...", a:[
+      {t:"een concreet resultaat", k:"D"},
+      {t:"goede gesprekken en nieuwe contacten", k:"I"},
+      {t:"een prettige, soepele samenwerking", k:"S"},
+      {t:"werk dat af en netjes is", k:"C"}]},
+    {q:"Mensen die je net kennen omschrijven je als...", a:[
+      {t:"doelgericht", k:"D"},
+      {t:"aanstekelijk", k:"I"},
+      {t:"kalm", k:"S"},
+      {t:"precies", k:"C"}]}
+  ];
+
+  const styles = {
+    D:{name:"Rood · Dominant", color:"var(--d)",
+       body:"Jij stuurt op resultaat en hakt knopen door waar anderen blijven wikken. Tempo en richting zijn je kracht. Je valkuil zit in ongeduld, en in het risico dat je over mensen heen gaat als het je te lang duurt."},
+    I:{name:"Geel · Invloed", color:"var(--i)",
+       body:"Jij krijgt mensen mee en brengt energie in een ruimte. Overtuigen en verbinden gaat je natuurlijk af. Je valkuil zit in focus, je begint graag aan veel tegelijk en het afmaken vraagt aandacht."},
+    S:{name:"Groen · Stabiel", color:"var(--s)",
+       body:"Jij brengt rust en houdt een team bij elkaar. Mensen vertrouwen op je en je luistert echt. Je valkuil zit in verandering en in het aangeven van je eigen grens, dat schuif je makkelijk voor je uit."},
+    C:{name:"Blauw · Consciëntieus", color:"var(--c)",
+       body:"Jij wilt dat het klopt en werkt grondig en onderbouwd. Kwaliteit en precisie zijn je houvast. Je valkuil zit in perfectionisme, en in beslissingen die je liever uitstelt tot je alles weet."}
+  };
+  const order = ["D","I","S","C"];
+
+  let current = 0;
+  const answers = new Array(questions.length).fill(null);
+  const scores = {D:0,I:0,S:0,C:0};
+
+  const elIntro = document.getElementById('intro');
+  const elQuiz = document.getElementById('quiz');
+  const elResult = document.getElementById('result');
+  const elQtext = document.getElementById('qtext');
+  const elOpts = document.getElementById('opts');
+  const elBar = document.getElementById('bar');
+  const elCount = document.getElementById('qcount');
+  const elBack = document.getElementById('back');
+
+  function show(step){
+    [elIntro,elQuiz,elResult].forEach(s=>s.classList.remove('active'));
+    step.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+
+  function renderQuestion(){
+    const item = questions[current];
+    elCount.textContent = "Vraag "+(current+1)+" van "+questions.length;
+    elBar.style.width = ((current)/questions.length*100)+"%";
+    elQtext.textContent = item.q;
+    elOpts.innerHTML = "";
+    item.a.forEach((opt)=>{
+      const b = document.createElement('button');
+      b.className = "option";
+      b.textContent = opt.t;
+      b.addEventListener('click', ()=>choose(opt.k));
+      elOpts.appendChild(b);
+    });
+    elBack.style.visibility = current===0 ? "hidden" : "visible";
+  }
+
+  function choose(key){
+    if(answers[current]) scores[answers[current]]--;
+    answers[current] = key;
+    scores[key]++;
+    if(current < questions.length-1){
+      current++;
+      renderQuestion();
+    } else {
+      renderResult();
+    }
+  }
+
+  document.getElementById('back').addEventListener('click', ()=>{
+    if(current>0){ current--; renderQuestion(); }
+  });
+
+  function renderResult(){
+    elBar.style.width = "100%";
+    const ranked = order.slice().sort((a,b)=> scores[b]-scores[a]);
+    const top = ranked[0];
+    const st = styles[top];
+    document.getElementById('raccent').textContent = "Jouw accent";
+    document.getElementById('raccent').style.color = st.color;
+    document.getElementById('rtitle').textContent = st.name;
+    document.getElementById('rtitle').style.color = st.color;
+    document.getElementById('rbody').textContent = st.body;
+    document.getElementById('discResult').value = st.name;
+
+    const second = ranked[1];
+    const secondEl = document.getElementById('rsecond');
+    if(scores[top]-scores[second] <= 1){
+      secondEl.textContent = "Je tweede kleur ligt dichtbij: "+styles[second].name+". Veel mensen zijn een mix van twee stijlen.";
+    } else {
+      secondEl.textContent = "Bijna niemand is één kleur. Je tweede kleur kleurt mee in hoe je dit inzet.";
+    }
+
+    const max = Math.max.apply(null, order.map(k=>scores[k])) || 1;
+    const barsEl = document.getElementById('bars');
+    barsEl.innerHTML = "";
+    order.forEach(k=>{
+      const row = document.createElement('div'); row.className="bar-row";
+      const lab = document.createElement('div'); lab.className="bar-label"; lab.textContent = styles[k].name;
+      const track = document.createElement('div'); track.className="bar-track";
+      const fill = document.createElement('div'); fill.className="bar-fill";
+      fill.style.background = styles[k].color;
+      track.appendChild(fill);
+      row.appendChild(lab); row.appendChild(track);
+      barsEl.appendChild(row);
+      requestAnimationFrame(()=>{ fill.style.width = (scores[k]/max*100)+"%"; });
+    });
+
+    show(elResult);
+  }
+
+  document.getElementById('start').addEventListener('click', ()=>{
+    current=0; renderQuestion(); show(elQuiz);
+  });
+  document.getElementById('restart').addEventListener('click', ()=>{
+    current=0; answers.fill(null);
+    order.forEach(k=>scores[k]=0);
+    show(elIntro);
+  });
+
+  const captureForm = document.getElementById('captureForm');
+  const captureStatus = document.getElementById('captureStatus');
+  captureForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = new FormData(captureForm);
+    const btn = captureForm.querySelector('button[type="submit"]');
+    const orig = btn.textContent;
+    btn.textContent = 'Bezig met versturen...';
+    btn.disabled = true;
+    fetch('https://api.web3forms.com/submit', { method:'POST', body:data })
+      .then(r => r.json())
+      .then(d => {
+        if(d.success){
+          captureForm.style.display = 'none';
+          captureStatus.style.display = 'block';
+          captureStatus.textContent = 'Dank je. Dave stuurt je binnenkort een korte toelichting op je indicatie.';
+          captureStatus.scrollIntoView({behavior:'smooth',block:'center'});
+        } else {
+          captureStatus.style.display = 'block';
+          captureStatus.textContent = 'Er ging iets mis. Probeer het opnieuw of mail naar info@cliffordtraining.nl.';
+          btn.textContent = orig; btn.disabled = false;
+        }
+      })
+      .catch(() => {
+        captureStatus.style.display = 'block';
+        captureStatus.textContent = 'Er ging iets mis. Probeer het opnieuw of mail naar info@cliffordtraining.nl.';
+        btn.textContent = orig; btn.disabled = false;
+      });
+  });
+
+  renderQuestion();
+</script>
+</body>
+</html>
