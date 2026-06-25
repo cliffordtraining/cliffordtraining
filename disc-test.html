@@ -191,7 +191,7 @@
       <div class="eyebrow">Gratis DiSC test</div>
       <h1>Doe de gratis DiSC test. Waar ligt jouw accent?</h1>
       <p class="lead">Twaalf korte vragen over hoe je werkt, beslist en met anderen omgaat. Aan het eind zie je waar je accent ligt en wat dat zegt over je gedrag als leider.</p>
-      <p class="fineprint">Het kost ongeveer drie minuten. Dit is een eerste indicatie. Een volledig DiSC-profiel met Dave gaat dieper, ook op je tweede kleur en op wat je gedrag stuurt onder druk.</p>
+      <p class="fineprint">Het kost ongeveer drie minuten en je ziet je uitslag direct, zonder account of aanmelding. Dit is een eerste indicatie. Een volledig DiSC-profiel met Dave gaat dieper, ook op je tweede kleur en op wat je gedrag stuurt onder druk.</p>
       <button class="btn" id="start">Start de test</button>
     </section>
 
@@ -241,6 +241,32 @@
 
   </div>
 </main>
+
+<section class="faq" style="border-top:1px solid var(--line);">
+  <div class="wrap" style="padding:52px 0 12px;">
+    <h2 style="font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:clamp(26px,4.5vw,34px);line-height:1.12;margin:0 0 22px;">Veelgestelde vragen over de DiSC test</h2>
+
+    <details style="border-top:1px solid var(--line);padding:18px 0;">
+      <summary style="cursor:pointer;font-weight:600;font-size:18px;color:var(--ink);list-style:revert;">Hoeveel kost een DiSC test?</summary>
+      <p style="margin:12px 0 0;color:var(--ink-soft);font-size:16px;line-height:1.6;">Deze test is gratis en je ziet je uitslag meteen. Een volledig DiSC-profiel met Dave gaat dieper, ook op je tweede kleur en je gedrag onder druk. Dat is maatwerk, en wat het kost bespreken we vooraf.</p>
+    </details>
+
+    <details style="border-top:1px solid var(--line);padding:18px 0;">
+      <summary style="cursor:pointer;font-weight:600;font-size:18px;color:var(--ink);list-style:revert;">Wat zegt de DiSC test?</summary>
+      <p style="margin:12px 0 0;color:var(--ink-soft);font-size:16px;line-height:1.6;">De test laat zien waar je accent ligt in vier gedragsstijlen. Rood is daadkracht, geel is contact, groen is rust, blauw is precisie. Je ziet welke stijl je van nature het snelst inzet en wat dat betekent voor hoe je samenwerkt.</p>
+    </details>
+
+    <details style="border-top:1px solid var(--line);padding:18px 0;">
+      <summary style="cursor:pointer;font-weight:600;font-size:18px;color:var(--ink);list-style:revert;">Is de DiSC test betrouwbaar?</summary>
+      <p style="margin:12px 0 0;color:var(--ink-soft);font-size:16px;line-height:1.6;">Deze gratis test geeft je een eerste indicatie, geen volledig gevalideerd assessment. Voor een snelle blik op je gedragsstijl is dat genoeg. Wil je een onderbouwd profiel, dan gaat een volledige DiSC-analyse met Dave verder de diepte in.</p>
+    </details>
+
+    <details style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;">
+      <summary style="cursor:pointer;font-weight:600;font-size:18px;color:var(--ink);list-style:revert;">Welke kleur ben ik?</summary>
+      <p style="margin:12px 0 0;color:var(--ink-soft);font-size:16px;line-height:1.6;">Dat ontdek je door de test te doen. Aan het eind zie je je accentkleur, rood, geel, groen of blauw, plus je tweede kleur. De meeste mensen herkennen zich in een combinatie, niet in &eacute;&eacute;n kleur.</p>
+    </details>
+  </div>
+</section>
 
 <footer class="site">
   <div class="wrap footer-top">
@@ -480,6 +506,18 @@
   });
 
   renderQuestion();
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Hoeveel kost een DiSC test?","acceptedAnswer":{"@type":"Answer","text":"Deze test is gratis en je ziet je uitslag meteen. Een volledig DiSC-profiel met Dave gaat dieper, ook op je tweede kleur en je gedrag onder druk. Dat is maatwerk, en wat het kost bespreken we vooraf."}},
+    {"@type":"Question","name":"Wat zegt de DiSC test?","acceptedAnswer":{"@type":"Answer","text":"De test laat zien waar je accent ligt in vier gedragsstijlen. Rood is daadkracht, geel is contact, groen is rust, blauw is precisie. Je ziet welke stijl je van nature het snelst inzet en wat dat betekent voor hoe je samenwerkt."}},
+    {"@type":"Question","name":"Is de DiSC test betrouwbaar?","acceptedAnswer":{"@type":"Answer","text":"Deze gratis test geeft je een eerste indicatie, geen volledig gevalideerd assessment. Voor een snelle blik op je gedragsstijl is dat genoeg. Wil je een onderbouwd profiel, dan gaat een volledige DiSC-analyse met Dave verder de diepte in."}},
+    {"@type":"Question","name":"Welke kleur ben ik?","acceptedAnswer":{"@type":"Answer","text":"Dat ontdek je door de test te doen. Aan het eind zie je je accentkleur, rood, geel, groen of blauw, plus je tweede kleur. De meeste mensen herkennen zich in een combinatie, niet in een kleur."}}
+  ]
+}
 </script>
 </body>
 </html>
