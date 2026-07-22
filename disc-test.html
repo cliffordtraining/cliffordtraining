@@ -173,12 +173,35 @@
     *{animation:none!important;transition:none!important;}
   }
 </style>
+<script>
+  // GA4 vertraagd laden: na eerste interactie of na 3s, wat het eerst komt
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  (function(){
+    var loaded = false;
+    function loadGA(){
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.async = true;
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-VLGZ1ZMHXG';
+      document.head.appendChild(s);
+      gtag('js', new Date());
+      gtag('config', 'G-VLGZ1ZMHXG');
+    }
+    var events = ['scroll', 'mousemove', 'touchstart', 'keydown', 'click'];
+    events.forEach(function(e){
+      window.addEventListener(e, loadGA, { once: true, passive: true });
+    });
+    setTimeout(loadGA, 3000);
+  })();
+</script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap">
-    <a class="brand" href="index.html"><img class="logo" src="https://www.cliffordtraining.nl/assets/logo-clifford.svg" alt="Clifford Training &amp; Coaching"></a>
+    <a class="brand" href="/"><img class="logo" src="https://www.cliffordtraining.nl/assets/logo-clifford.svg" alt="Clifford Training &amp; Coaching"></a>
     <a class="nav-cta" href="contact.html">Plan een gesprek</a>
   </div>
 </header>
