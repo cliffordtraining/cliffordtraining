@@ -176,6 +176,17 @@
           <textarea id="bericht" name="bericht" rows="6" required style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; resize: vertical; line-height: 1.5; transition: border-color 0.2s;"></textarea>
         </div>
 
+        <div>
+          <label for="herkomst" style="display: block; font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Hoe kwam je bij mij terecht? <span style="font-weight: 400; color: var(--ink-light);">(optioneel)</span></label>
+          <input type="text" id="herkomst" name="Hoe kwam je bij mij terecht" placeholder="Via Google, via ChatGPT, via iemand die mij kent" style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; transition: border-color 0.2s;">
+        </div>
+
+        <input type="hidden" name="Verwijzer" value="">
+        <input type="hidden" name="Landingspagina" value="">
+        <input type="hidden" name="Campagne" value="">
+        <input type="hidden" name="Aantal bezoeken" value="">
+        <input type="hidden" name="Eerste bezoek" value="">
+
         <div style="margin-top: 4px;">
           <button type="submit" class="btn btn-primary" style="width: 100%; cursor: pointer;">Stuur bericht</button>
         </div>
@@ -193,6 +204,55 @@
     var form = document.getElementById('contactForm');
     var status = document.getElementById('formStatus');
     if (!form) return;
+
+    /* Herkomstregistratie. Vult de verborgen velden zodat elke aanvraagmail
+       laat zien waar de bezoeker vandaan kwam. */
+    try {
+      var eigenHost = location.hostname;
+      var opgeslagen = null;
+      try { opgeslagen = JSON.parse(sessionStorage.getItem('ct_herkomst') || 'null'); } catch (e) {}
+
+      if (!opgeslagen) {
+        var p = new URLSearchParams(location.search);
+        var ref = document.referrer || '';
+        var refHost = '';
+        try { refHost = ref ? new URL(ref).hostname : ''; } catch (e) {}
+
+        var verwijzer;
+        if (refHost && refHost !== eigenHost) {
+          verwijzer = ref;
+        } else if (refHost) {
+          verwijzer = 'intern, vorige pagina ' + ref.replace(location.origin, '');
+        } else {
+          verwijzer = 'direct of onbekend';
+        }
+
+        opgeslagen = {
+          verwijzer: verwijzer,
+          landingspagina: location.pathname + location.search,
+          campagne: [p.get('utm_source'), p.get('utm_medium'), p.get('utm_campaign')].filter(Boolean).join(' / ')
+        };
+        sessionStorage.setItem('ct_herkomst', JSON.stringify(opgeslagen));
+
+        var n = parseInt(localStorage.getItem('ct_bezoeken') || '0', 10) + 1;
+        localStorage.setItem('ct_bezoeken', String(n));
+        if (!localStorage.getItem('ct_eerste_bezoek')) {
+          localStorage.setItem('ct_eerste_bezoek', new Date().toISOString().slice(0, 10));
+        }
+      }
+
+      var waarden = {
+        'Verwijzer': opgeslagen.verwijzer || 'direct of onbekend',
+        'Landingspagina': opgeslagen.landingspagina || '',
+        'Campagne': opgeslagen.campagne || 'geen',
+        'Aantal bezoeken': localStorage.getItem('ct_bezoeken') || '1',
+        'Eerste bezoek': localStorage.getItem('ct_eerste_bezoek') || ''
+      };
+      Object.keys(waarden).forEach(function(naam) {
+        var veld = form.querySelector('input[name="' + naam + '"]');
+        if (veld) { veld.value = waarden[naam]; }
+      });
+    } catch (e) {}
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
