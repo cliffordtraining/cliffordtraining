@@ -139,10 +139,10 @@
 
 <section class="section" style="padding-top: 0;">
   <div style="max-width: 760px; margin: 0 auto;">
-    <div style="background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 48px 40px;">
+    <div style="background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 48px clamp(20px, 5vw, 40px);">
       <div class="eyebrow" style="margin-bottom: 16px;">Schrijf me een bericht</div>
-      <h2 style="font-family: Fraunces, serif; font-size: 28px; margin-bottom: 12px; color: var(--ink); line-height: 1.2;">Liever eerst even iets delen.</h2>
-      <p style="color: var(--ink-soft); margin-bottom: 32px;">Vul in wat je kwijt wilt. Ik lees mee en kom binnen een werkdag bij je terug.</p>
+      <h2 style="font-family: Fraunces, serif; font-size: 28px; margin-bottom: 12px; color: var(--ink); line-height: 1.2;">Liever eerst iets voorleggen.</h2>
+      <p style="color: var(--ink-soft); margin-bottom: 32px;">Vertel kort waar je tegenaan loopt of waar je het over wilt hebben.</p>
 
       <form action="https://api.web3forms.com/submit" method="POST" id="contactForm" style="display: grid; gap: 20px;">
         <input type="hidden" name="access_key" value="bf2e2212-b449-473f-8954-22d31f7dd0e5">
@@ -160,25 +160,27 @@
           <input type="email" id="email" name="email" required style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; transition: border-color 0.2s;">
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-          <div>
-            <label for="functie" style="display: block; font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Functie</label>
-            <input type="text" id="functie" name="functie" required style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; transition: border-color 0.2s;">
-          </div>
-          <div>
-            <label for="organisatie" style="display: block; font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Organisatie</label>
-            <input type="text" id="organisatie" name="organisatie" required style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; transition: border-color 0.2s;">
-          </div>
-        </div>
-
         <div>
-          <label for="bericht" style="display: block; font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Wat speelt er?</label>
-          <textarea id="bericht" name="bericht" rows="6" required style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; resize: vertical; line-height: 1.5; transition: border-color 0.2s;"></textarea>
+          <label for="bericht" style="display: block; font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Waar loop je tegenaan?</label>
+          <textarea id="bericht" name="bericht" rows="4" required placeholder="Een paar zinnen is genoeg." style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; resize: vertical; line-height: 1.5; transition: border-color 0.2s;"></textarea>
         </div>
 
         <div>
           <label for="herkomst" style="display: block; font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Hoe kwam je bij mij terecht? <span style="font-weight: 400; color: var(--ink-light);">(optioneel)</span></label>
-          <input type="text" id="herkomst" name="Hoe kwam je bij mij terecht" placeholder="Via Google, via ChatGPT, via iemand die mij kent" style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; transition: border-color 0.2s;">
+          <select id="herkomst" name="Hoe kwam je bij mij terecht" style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; transition: border-color 0.2s;">
+            <option value="">Kies gerust iets</option>
+            <option value="Google">Via Google</option>
+            <option value="ChatGPT">Via ChatGPT</option>
+            <option value="Andere AI">Via een andere AI-assistent</option>
+            <option value="LinkedIn">Via LinkedIn</option>
+            <option value="Aanbeveling">Iemand heeft je aanbevolen</option>
+            <option value="Anders">Anders</option>
+          </select>
+        </div>
+
+        <div id="herkomstAndersWrap" style="display: none;">
+          <label for="herkomstAnders" style="display: block; font-size: 14px; font-weight: 500; color: var(--ink); margin-bottom: 6px;">Waar dan?</label>
+          <input type="text" id="herkomstAnders" name="Herkomst anders" style="width: 100%; padding: 12px 14px; font-family: inherit; font-size: 15px; color: var(--ink); background: var(--paper-warm); border: 1px solid var(--line); border-radius: 4px; transition: border-color 0.2s;">
         </div>
 
         <input type="hidden" name="Verwijzer" value="">
@@ -188,13 +190,13 @@
         <input type="hidden" name="Eerste bezoek" value="">
 
         <div style="margin-top: 4px;">
-          <button type="submit" class="btn btn-primary" style="width: 100%; cursor: pointer;">Stuur bericht</button>
+          <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; cursor: pointer;">Plan een gesprek</button>
         </div>
 
         <p id="formStatus" style="display: none; text-align: center; padding: 12px; border-radius: 4px; margin: 0;"></p>
       </form>
 
-      <p style="font-size: 14px; color: var(--ink-light); font-style: italic; text-align: center; margin-top: 24px; margin-bottom: 0;">Wat je hier deelt blijft tussen ons.</p>
+      <p style="font-size: 14px; color: var(--ink-light); font-style: italic; text-align: center; margin-top: 24px; margin-bottom: 0;">Je krijgt binnen een werkdag antwoord van mij persoonlijk.</p>
     </div>
   </div>
 </section>
@@ -254,6 +256,15 @@
       });
     } catch (e) {}
 
+    /* Vrij tekstveld tonen zodra iemand Anders kiest bij de herkomstvraag. */
+    var herkomst = document.getElementById('herkomst');
+    var andersWrap = document.getElementById('herkomstAndersWrap');
+    if (herkomst && andersWrap) {
+      herkomst.addEventListener('change', function() {
+        andersWrap.style.display = this.value === 'Anders' ? 'block' : 'none';
+      });
+    }
+
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       var formData = new FormData(form);
@@ -269,12 +280,19 @@
       .then(function(response) { return response.json(); })
       .then(function(data) {
         if (data.success) {
+          if (typeof gtag === 'function') {
+            gtag('event', 'form_submit', {
+              form_id: 'contactForm',
+              herkomst: (herkomst && herkomst.value) || 'niet ingevuld'
+            });
+          }
           form.reset();
+          if (andersWrap) { andersWrap.style.display = 'none'; }
           status.style.display = 'block';
           status.style.background = 'var(--paper-warm)';
           status.style.color = 'var(--ink)';
-          status.textContent = 'Dank je. Ik reageer binnen 24 uur.';
-          form.querySelectorAll('input, textarea, button').forEach(function(el) { el.style.display = 'none'; });
+          status.textContent = 'Dank je. Ik kom binnen een werkdag bij je terug.';
+          form.querySelectorAll('input, textarea, select, button, label').forEach(function(el) { el.style.display = 'none'; });
           form.querySelector('input[type="hidden"]').style.display = 'none';
           status.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
@@ -296,7 +314,7 @@
       });
     });
 
-    form.querySelectorAll('input, textarea').forEach(function(el) {
+    form.querySelectorAll('input, textarea, select').forEach(function(el) {
       el.addEventListener('focus', function() { this.style.borderColor = 'var(--accent)'; });
       el.addEventListener('blur', function() { this.style.borderColor = 'var(--line)'; });
     });
@@ -316,8 +334,7 @@
       <div class="eyebrow" style="justify-content: center;">Locatie</div>
       <h2 class="section-title" style="font-size: clamp(28px, 4vw, 42px);">Waar we werken</h2>
       <p style="font-size: 17px; color: var(--ink-soft); margin-bottom: 12px;">Coaching vindt plaats in Arnhem of online, in zowel Nederlands als Engels.</p>
-      <p style="font-size: 17px; color: var(--ink-soft); margin-bottom: 12px;">De praktijk in Arnhem is goed bereikbaar voor leiders uit Nijmegen, Apeldoorn, Utrecht en Den Bosch.</p>
-      <p style="font-size: 17px; color: var(--ink-soft); margin-bottom: 32px;">Trainingen vinden plaats op locatie bij de klant. Voor meerdaagse programma&#39;s werk ik op <strong>ROOTS Inspiratielocatie</strong> in Haaren, Noord-Brabant.</p>
+      <p style="font-size: 17px; color: var(--ink-soft); margin-bottom: 32px;">De praktijk in Arnhem is goed bereikbaar voor leiders uit Nijmegen, Apeldoorn, Utrecht en Den Bosch.</p>
       <div style="font-family: Fraunces, serif; font-size: 20px; color: var(--ink); line-height: 1.6;">
         <strong>Clifford Training &amp; Coaching</strong><br>
         Eusebiusbuitensingel 7<br>
