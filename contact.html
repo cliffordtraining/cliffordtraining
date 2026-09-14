@@ -281,15 +281,8 @@
       .then(function(data) {
         if (data.success) {
           try {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-              event: 'form_submit',
-              form_id: 'contactForm',
-              herkomst: (herkomst && herkomst.value) || 'niet ingevuld'
-            });
             if (typeof gtag === 'function') {
-              gtag('event', 'form_submit', {
-                form_id: 'contactForm',
+              gtag('event', 'contact_verzonden', {
                 herkomst: (herkomst && herkomst.value) || 'niet ingevuld'
               });
             }
